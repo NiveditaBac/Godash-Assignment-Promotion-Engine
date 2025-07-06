@@ -36,4 +36,14 @@ public class CheckoutServiceTest {
         );
         assertEquals(100, checkoutService.calculateTotal(items));
     }
+
+    @Test
+    void testScenarioB() {
+        List<CartItem> items = List.of(
+                new CartItem(new Sku('A', 50), 5),
+                new CartItem(new Sku('B', 30), 5),
+                new CartItem(new Sku('C', 20), 1)
+        );
+        assertEquals(370, checkoutService.calculateTotal(items));
+    }
 }
